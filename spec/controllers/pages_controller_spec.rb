@@ -4,7 +4,8 @@ describe PagesController do
   render_views
 
   before(:each) do
-    response.should have_selector("title", :content => "Simple App du Tutoriel Ruby on Rails")
+    response.should have_selector("title",
+                                  :content => "Simple App du Tutoriel Ruby on Rails")
   end
 
   describe "GET 'home'" do
