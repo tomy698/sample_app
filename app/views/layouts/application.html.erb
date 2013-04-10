@@ -13,16 +13,7 @@
     </head>
     <body>
         <div class="container">
-          <header>
-            <%= link_to logo, root_path %>
-            <nav class="round">
-              <ul>
-                <li><%= link_to "Accueil", root_path %></li>
-                <li><%= link_to "Aide", help_path %></li>
-                <li><%= link_to "Connexion", '#' %></li>
-              </ul>
-            </nav>
-          </header>
+          <%= render 'layouts/header' %>
           <section class="round">
             <% flash.each do |key, value| %>
                 <div class="flash <%= key %>"><%= value %></div>

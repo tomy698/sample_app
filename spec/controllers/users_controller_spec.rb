@@ -117,6 +117,11 @@ describe UsersController do
         post :create, :user => @attr
         flash[:success].should =~ /Bienvenue dans l'Application Exemple/i
       end
+
+      it "devrait identifier l'utilisateur" do
+        post :create, :user => @attr
+        controller.should be_signed_in
+      end
     end
   end
 end
