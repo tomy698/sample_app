@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def new
-    @title = "S'identifier"
+    @titre = "S'identifier"
   end
 
   def current_user=(user)
@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
       render 'new'
     else
       sign_in user
-      redirect_to user
+      redirect_back_or user
     end
   end
 
