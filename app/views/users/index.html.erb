@@ -1,7 +1,7 @@
-<h1>Tous les utilisateurs</h1>
+<h1><%= I18n.t("fields.allusers") %></h1>
 
 <%= will_paginate %>
-<ul class="users">
+<table class="users">
   <%= render @users %>
-</ul>
+</table>
 <%= will_paginate %>

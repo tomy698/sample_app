@@ -1,8 +1,13 @@
-<li>
-  <%= gravatar_for user, :size => 30 %>
-  <%= link_to user.nom, user %>
-  <% if current_user.admin? %>
-      | <%= link_to "supprimer", user, :method => :delete, :confirm => "Etes-vous certain ?",
-                    :title => "Supprimer #{user.nom}" %>
-  <% end %>
-</li>
+<tr>
+    <td width="30px">
+        <%= gravatar_for user, :size => 30 %>
+    </td>
+    <td style="text-align: left">
+        <%= link_to user.nom, user %>
+    </td>
+    <td style="text-align: right">
+        <% if current_user.admin? %>
+            <%= link_to deleteIcon, user, :method => :delete, :confirm =>  I18n.t("text.confirm") %>
+        <% end %>
+    </td>
+</tr>

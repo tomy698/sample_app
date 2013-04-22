@@ -2,22 +2,29 @@
     <table class="front" summary="Pour visiteur identifié">
       <tr>
         <td class="main">
-          <h1 class="micropost">Quoi de neuf ?</h1>
+          <h1 class="micropost"><%= I18n.t("fields.whatsnew") %></h1>
           <%= render 'shared/micropost_form' %>
           <%= render 'shared/feed' %>
         </td>
         <td class="sidebar round">
           <%= render 'shared/user_info' %>
+          <%= render 'shared/stats' %>
         </td>
       </tr>
     </table>
 <% else %>
-    <h1>Sample App</h1>
+    <h1><%= I18n.t("fields.title") %></h1>
 
     <p>
-      C'est la page d'accueil de l'application exemple du
-      <a href="http://railstutorial.org/">Tutoriel Ruby on Rails</a>.
+      <%= I18n.t("fields.welcomemessage") %>
     </p>
 
-    <%= link_to "S'inscrire !", signup_path, :class => "signup_button round" %>
+    <%= link_to(signup_path, :class => "signup_button") do %>
+        <span class="round animated-button orange pulse">
+            <div class="content">
+              <div class="title"><%=  I18n.t("buttons.signup") %> </div>
+              <div class="sub-title"><%=  I18n.t("buttons.signupsubtitle") %></div>
+            </div>
+        </span>
+    <% end %>
 <% end %>

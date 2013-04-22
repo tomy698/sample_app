@@ -1,5 +1,86 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
-en:
-  hello: "Hello world"
+#encoding: utf-8
+"en":
+  datetime:
+    distance_in_words:
+      half_a_minute: "Half a minute"
+      less_than_x_seconds:
+        one:   "Less than 1 second"
+        other: "Less than %{count} seconds"
+      x_seconds:
+        one:   "1 second ago"
+        other: "%{count} seconds ago"
+      less_than_x_minutes:
+        one:   "Less than a minute"
+        other: "Less than %{count} minutes"
+      x_minutes:
+        one:   "1 minute ago"
+        other: "%{count} minutes ago"
+      about_x_hours:
+        one:   "About 1 hour"
+        other: "About %{count} hours"
+      x_days:
+        one:   "1 day ago"
+        other: "%{count} days ago"
+      about_x_months:
+        one:   "About 1 month"
+        other: "About %{count} months"
+      x_months:
+        one:   "1 month ago"
+        other: "%{count} months ago"
+      about_x_years:
+        one:   "About 1 year"
+        other: "About %{count} years"
+      over_x_years:
+        one:   "Over 1 year"
+        other: "Over %{count} years"
+      almost_x_years:
+        one:   "Almost 1 year"
+        other: "Almost %{count} years"
+  buttons:
+    submit: "Submit"
+    delete: "Delete"
+    update: "Update"
+    change: "Modify"
+    signin: "Sign in"
+    signup: "Sign up"
+    signupsubtitle: "to join Tchatter"
+    signout: "Sign out"
+    follow: "Follow"
+    unfollow: "Unfollow"
+  fields:
+    title: "Tchatter"
+    home: "Home"
+    welcomemessage: "Welcome to Tchatter. Find out what’s happening, right now, with the people and organizations you care about."
+    help: "Help"
+    helpmessage: "What is Tchatter? <br/><br/> Tchatter is a service for friends, family, and co–workers to communicate and stay connected through the exchange of quick, frequent messages. People write short updates, often called 'Tchats' of 140 characters or fewer. These messages are posted to your profile, sent to your followers, and are searchable on Tchatter search."
+    users: "Users"
+    profil: "My profile"
+    settings: "Settings"
+    identification: "Identification"
+    allusers: "All users"
+    whatsnew: "What's new?"
+  text:
+    newtotchatter: "New to Tchatter?"
+    error: "error"
+    follower: "follower"
+    followers: "followers"
+    following: "following"
+    confirm: "Are you sure?"
+    micropostcreated: "Micropost created!"
+    profilupdated: "Profil updated successfully"
+    userdeleted: "User deleted successfully"
+    loginbefore: "You need to login to join this page"
+  label:
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      password_confirmation: "Confirmation Password"
+      message: "message"
+  error:
+    badloginpassword: "Email and password doesn't match"
+    errormessage1: "prohibited this"
+    errormessage2: "from being saved"
+    errormessage3: "There were problems with the following fields"
+  language:
+    french: "Français"
+    english: "English"

@@ -1,21 +1,16 @@
+# encoding: utf-8
+
 class PagesController < ApplicationController
+
   def home
-    @titre = "Home"
+    @titre = I18n.t("fields.home")
     if signed_in?
       @micropost = Micropost.new
       @feed_items = current_user.feed.paginate(:page => params[:page])
     end
   end
 
-  def contact
-    @titre = "Contact"
-  end
-
-  def about
-    @titre = "A propos"
-  end
-
   def help
-    @titre = "Aide"
+    @titre = I18n.t("fields.help")
   end
 end

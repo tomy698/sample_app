@@ -1,0 +1,59 @@
+#encoding: utf-8
+"fr":
+  # Used in distance_of_time_in_words(), distance_of_time_in_words_to_now(), time_ago_in_words()
+  datetime:
+    distance_in_words:
+      half_a_minute: "Il y a une demi-minute"
+      less_than_x_seconds:
+        one:   "Il y a moins d'une seconde"
+        other: "Il y a moins de %{count} secondes"
+      x_seconds:
+        one:   "Il y a 1 seconde"
+        other: "Il y a %{count} secondes"
+      less_than_x_minutes:
+        one:   "Il y a moins d'une minute"
+        other: "Il y a moins de %{count} minutes"
+      x_minutes:
+        one:   "Il y a 1 minute"
+        other: "Il y a %{count} minutes"
+      about_x_hours:
+        one:   "Il y a environ 1 heure"
+        other: "Il y a environ %{count} heures"
+      x_days:
+        one:   "Il y a 1 jour"
+        other: "Il y a %{count} jour"
+      about_x_months:
+        one:   "Il y a environ 1 mois"
+        other: "Il y a environ %{count} mois"
+      x_months:
+        one:   "Il y a 1 mois"
+        other: "Il y a %{count} mois"
+      about_x_years:
+        one:   "Il y a environ 1 an"
+        other: "Il y a environ %{count} ans"
+      over_x_years:
+        one:   "Il y a plus d'un an"
+        other: "Il y a plus de %{count} ans"
+      almost_x_years:
+        one:   "Il y a presque un an"
+        other: "Il y a presque %{count} ans"
+  buttons:
+    submit: "Soumettre"
+    delete: "Supprimer"
+    update: "Mettre à jour"
+    change: "Changer"
+    signin: "Se connecter"
+    signup: "S'inscrire"
+  fields:
+    title: "Tchatter"
+    home: "Accueil"
+    welcomeMessage: "Bienvenue sur Twitter. Découvrez ce qui se passe en ce moment chez les personnes et dans les organismes qui vous tiennent à cœur."
+    help: "Aide"
+    name: "Nom"
+    email: "Email"
+    password: "Mot de passe"
+    confirmation: "Confirmation"
+    helpMessage: "Qu'est-ce que Tchatter? Tchatter est un service pour les amis, la famille et les collègues de communiquer et de rester connecté grâce à l'échange de messages, souvent rapides. Personnes écrire brèves mises à jour, souvent appelé 'Tchats' de 140 caractères ou moins. Ces messages sont affichées sur votre profil, envoyé à tes abonnés, et sont consultables sur la recherche Tchatter."
+    users: "Utilisateurs"
+    profil: "Mon profil"
+    settings: "Réglages"

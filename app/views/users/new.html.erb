@@ -1,24 +1,20 @@
-<h1>Inscription</h1>
+<h1><%= I18n.t("buttons.signup") %></h1>
 
 <%= form_for(@user) do |f| %>
     <%= render 'shared/error_messages', :object => f.object %>
     <div class="field">
-      <%= f.label :nom %><br />
-      <%= f.text_field :nom %>
+      <%= f.text_field :nom, :placeholder => I18n.t("label.name") %>
     </div>
     <div class="field">
-      <%= f.label :email %><br />
-      <%= f.text_field :email %>
+      <%= f.text_field :email, :placeholder => I18n.t("label.email") %>
     </div>
     <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password %>
+      <%= f.password_field :password, :placeholder => I18n.t("label.password") %>
     </div>
     <div class="field">
-      <%= f.label :password_confirmation, "Confirmation" %><br />
-      <%= f.password_field :password_confirmation %>
+      <%= f.password_field :password_confirmation, :placeholder => I18n.t("label.password_confirmation") %>
     </div>
     <div class="actions">
-      <%= f.submit "Inscription" %>
+      <%= f.submit I18n.t("buttons.signup") %>
     </div>
 <% end %>

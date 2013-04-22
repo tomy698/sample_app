@@ -9,6 +9,7 @@ group :development do
   gem 'rspec-rails', '2.6.1.beta1'
   gem "annotate"
   gem 'faker'
+  gem 'jquery-rails'
 end
 
 group :test do

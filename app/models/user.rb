@@ -1,3 +1,19 @@
+# encoding: utf-8
+
+# == Schema Information
+#
+# Table name: users
+#
+#  id                 :integer          not null, primary key
+#  nom                :string(255)
+#  email              :string(255)
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  encrypted_password :string(255)
+#  salt               :string(255)
+#  admin              :boolean          default(FALSE)
+#
+
 # == Schema Information
 #
 # Table name: users
@@ -14,6 +30,13 @@ class User < ActiveRecord::Base
   attr_accessible :nom, :email, :password, :password_confirmation
 
   has_many :microposts, :dependent => :destroy
+  has_many :relationships, :foreign_key => "follower_id",
+           :dependent => :destroy
+  has_many :reverse_relationships, :foreign_key => "followed_id",
+           :class_name => "Relationship",
+           :dependent => :destroy
+  has_many :following, :through => :relationships, :source => :followed
+  has_many :followers, :through => :reverse_relationships, :source => :follower
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
@@ -44,7 +67,19 @@ class User < ActiveRecord::Base
   end
 
   def feed
-    Micropost.where("user_id = ?", id)
+    Micropost.from_users_followed_by(self)
+  end
+
+  def following?(followed)
+    relationships.find_by_followed_id(followed)
+  end
+
+  def follow!(followed)
+    relationships.create!(:followed_id => followed.id)
+  end
+
+  def unfollow!(followed)
+    relationships.find_by_followed_id(followed).destroy
   end
 
   private

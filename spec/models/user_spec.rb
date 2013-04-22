@@ -2,11 +2,14 @@
 #
 # Table name: users
 #
-#  id         :integer          not null, primary key
-#  nom        :string(255)
-#  email      :string(255)
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id                 :integer          not null, primary key
+#  nom                :string(255)
+#  email              :string(255)
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  encrypted_password :string(255)
+#  salt               :string(255)
+#  admin              :boolean          default(FALSE)
 #
 
 require 'spec_helper'
@@ -217,6 +220,63 @@ describe User do
       mp3 = Factory(:micropost,
                     :user => Factory(:user, :email => Factory.next(:email)))
       @user.feed.include?(mp3).should be_false
+    end
+  end
+
+  describe "relationships" do
+
+    before(:each) do
+      @user = User.create!(@attr)
+      @followed = Factory(:user)
+    end
+
+    it "devrait posséder une méthode `relationships`" do
+      @user.should respond_to(:relationships)
+    end
+
+    it "devrait posséder une méthode `following" do
+      @user.should respond_to(:following)
+    end
+
+    it "devrait avoir une méthode following?" do
+      @user.should respond_to(:following?)
+    end
+
+    it "devrait avoir une méthode follow!" do
+      @user.should respond_to(:follow!)
+    end
+
+    it "devrait suivre un autre utilisateur" do
+      @user.follow!(@followed)
+      @user.should be_following(@followed)
+    end
+
+    it "devrait inclure l'utilisateur suivi dans la liste following" do
+      @user.follow!(@followed)
+      @user.following.should include(@followed)
+    end
+
+    it "devrait avoir une méthode unfollow!" do
+      @followed.should respond_to(:unfollow!)
+    end
+
+    it "devrait arrêter de suivre un utilisateur" do
+      @user.follow!(@followed)
+      @user.unfollow!(@followed)
+      @user.should_not be_following(@followed)
+    end
+
+    it "devrait avoir un méthode reverse_relationship" do
+      @user.should respond_to(:reverse_relationships)
+    end
+
+    it "devrait avoir une méthode followers" do
+      @user.should respond_to(:followers)
+    end
+
+    it "devrait inclure le lecteur dans le tableau des lecteurs" do
+      @user.follow!(@followed)
+      @followed.followers.should include(@user)
     end
   end
 end

@@ -1,0 +1,26 @@
+<table summary="Information a propos des auteurs suivis ou des lecteurs">
+  <tr>
+    <td class="main">
+      <h1><%= @titre %></h1>
+      <% unless @users.empty? %>
+          <table class="users">
+            <%= render @users %>
+          </table>
+          <%= will_paginate @users %>
+      <% else %>
+          Pas d'auteur suivi
+      <% end %>
+    </td>
+    <td class="sidebar round">
+      <strong><%= I18n.t("label.name") %></strong> <%= @user.nom %><br />
+      <strong>URL</strong> <%= link_to user_path(@user), @user %><br />
+      <strong><%= pluralize(@user.microposts.count, I18n.t("label.message")) %></strong>
+      <%= render 'shared/stats' %>
+      <% unless @users.empty? %>
+          <% @users.each do |user| %>
+              <%= link_to gravatar_for(user, :size => 30), user %>
+          <% end %>
+      <% end %>
+    </td>
+  </tr>
+</table>

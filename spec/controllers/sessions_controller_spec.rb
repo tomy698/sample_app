@@ -76,6 +76,13 @@ describe SessionsController do
       end
     end
 
+    it "devrait créer une relation en utilisant Ajax" do
+      lambda do
+        xhr :post, :create, :relationship => { :followed_id => @followed }
+        response.should be_success
+      end.should change(Relationship, :count).by(1)
+    end
+
   end
 
   describe "DELETE 'destroy'" do
@@ -85,6 +92,13 @@ describe SessionsController do
       delete :destroy
       controller.should_not be_signed_in
       response.should redirect_to(root_path)
+    end
+
+    it "devrait détruire une relation en utilisant Ajax" do
+      lambda do
+        xhr :delete, :destroy, :id => @relationship
+        response.should be_success
+      end.should change(Relationship, :count).by(-1)
     end
   end
 end
