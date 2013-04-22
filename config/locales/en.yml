@@ -62,12 +62,13 @@
   text:
     newtotchatter: "New to Tchatter?"
     error: "error"
-    follower: "follower"
-    followers: "followers"
-    following: "following"
+    follower: "Follower"
+    followers: "Followers"
+    following: "Following"
+    followings: "Followings"
     confirm: "Are you sure?"
     micropostcreated: "Micropost created!"
-    profilupdated: "Profil updated successfully"
+    profilupdated: "Profile updated successfully"
     userdeleted: "User deleted successfully"
     loginbefore: "You need to login to join this page"
   label:

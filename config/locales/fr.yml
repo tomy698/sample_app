@@ -41,19 +41,62 @@
     submit: "Soumettre"
     delete: "Supprimer"
     update: "Mettre à jour"
-    change: "Changer"
-    signin: "Se connecter"
-    signup: "S'inscrire"
+    change: "Modifier"
+    signin: "S'identifier"
+    signup: "S'enregistrer"
+    signupsubtitle: "pour rejoindre Tchatter"
+    signout: "Se déconnecter"
+    follow: "Suivre"
+    unfollow: "Ne plus suivre"
   fields:
     title: "Tchatter"
     home: "Accueil"
-    welcomeMessage: "Bienvenue sur Twitter. Découvrez ce qui se passe en ce moment chez les personnes et dans les organismes qui vous tiennent à cœur."
+    welcomemessage: "Bienvenue sur Tchatter. Découvrez ce qui se passe en ce moment chez les personnes et dans les organismes qui vous tiennent à cœur."
     help: "Aide"
-    name: "Nom"
-    email: "Email"
-    password: "Mot de passe"
-    confirmation: "Confirmation"
-    helpMessage: "Qu'est-ce que Tchatter? Tchatter est un service pour les amis, la famille et les collègues de communiquer et de rester connecté grâce à l'échange de messages, souvent rapides. Personnes écrire brèves mises à jour, souvent appelé 'Tchats' de 140 caractères ou moins. Ces messages sont affichées sur votre profil, envoyé à tes abonnés, et sont consultables sur la recherche Tchatter."
+    helpmessage: "Tchatter, c'est quoi au juste ? <br/><br/>Tchatter est un réseau d'informations à base de messages de 140 caractères, appelés Tchats. C'est un moyen facile de découvrir les dernières nouvelles liées aux sujets qui vous intéressent."
     users: "Utilisateurs"
     profil: "Mon profil"
     settings: "Réglages"
+    identification: "Identification"
+    allusers: "Tout les utilisateurs"
+    whatsnew: "Quoi de neuf?"
+  text:
+    newtotchatter: "Nouveau sur Tchatter?"
+    error: "erreur"
+    follower: "Auteur suivi"
+    followers: "Auteurs suivis"
+    following: "Abonné"
+    followings: "Abonnés"
+    confirm: "Etes-vous sur?"
+    micropostcreated: "Micropost créé!"
+    profilupdated: "Profil mis à jour avec succès"
+    userdeleted: "Utilisateur supprimé avec succès"
+    loginbefore: "Vous devez d'abord vous connecter afin d'accéder à cette page"
+  label:
+      name: "Nom"
+      email: "Email"
+      password: "Mot de passe"
+      password_confirmation: "Confirmation du mot de passe"
+      message: "message"
+  error:
+    badloginpassword: "La combinaison email / mot de passe ne correspond pas"
+    errormessage1: "ont empêché(s)"
+    errormessage2: "d'être sauvegardé"
+    errormessage3: "Il y a un problème avec les champs suivants"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              blank: "ne peut être vide"
+              too_short: "est trop court (minimum 6 charactères)"
+              confirmation: "ne correspond pas avec la confirmation"
+            nom:
+              blank: "ne peut être vide"
+            email:
+              blank: "ne peut être vide"
+              invalid: "est invalide"
+  language:
+    french: "Français"
+    english: "English"

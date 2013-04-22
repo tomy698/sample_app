@@ -2,14 +2,10 @@
   <tr>
     <td class="main">
       <h1><%= @titre %></h1>
-      <% unless @users.empty? %>
-          <table class="users">
-            <%= render @users %>
-          </table>
-          <%= will_paginate @users %>
-      <% else %>
-          Pas d'auteur suivi
-      <% end %>
+      <table class="users">
+        <%= render @users %>
+      </table>
+      <%= will_paginate @users %>
     </td>
     <td class="sidebar round">
       <strong><%= I18n.t("label.name") %></strong> <%= @user.nom %><br />

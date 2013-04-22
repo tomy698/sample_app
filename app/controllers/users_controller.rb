@@ -2,7 +2,6 @@
 
 class UsersController < ApplicationController
   before_filter :authenticate, :except => [:show, :new, :create]
-  #before_filter :authenticate, :only => [:index, :edit, :update]
   before_filter :correct_user, :only => [:edit, :update]
   before_filter :admin_user,   :only => :destroy
 
@@ -56,14 +55,14 @@ class UsersController < ApplicationController
   end
 
   def following
-    @titre = I18n.t("text.following")
+    @titre = I18n.t("text.followings")
     @user = User.find(params[:id])
     @users = @user.following.paginate(:page => params[:page])
     render 'show_follow'
   end
 
   def followers
-    @titre = I18n.t("text.follower")
+    @titre = I18n.t("text.followers")
     @user = User.find(params[:id])
     @users = @user.followers.paginate(:page => params[:page])
     render 'show_follow'

@@ -17,12 +17,4 @@ module ApplicationHelper
   def deleteIcon
     deleteIcon = image_tag("deleteIcon.png", :alt => I18n.t("buttons.delete"), :title => I18n.t("buttons.delete"))
   end
-
-  def flagFR
-    flagFR = image_tag("fr_flag.png", :alt => "flagFR", :title => I18n.t("language.french"))
-  end
-
-  def flagEN
-    flagEN = image_tag("en_flag.png", :alt => "flagEN", :title => I18n.t("language.english"))
-  end
 end
